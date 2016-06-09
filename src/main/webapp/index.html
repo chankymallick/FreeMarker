@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html>  
     <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="DynamicServletScript"></script>
     </head>
-    <body>
-        <h1>Hello World!</h1>
+    <body onLoad="dynamic()">
+        <form action="FreemarkerServlet" method="POST">
+            <table align="center">
+                <tr>
+                    <th>Student Id</th>
+                    <th> <input type="text" id="StudentId" name="id"/></th>
+                </tr>
+                <tr>
+                    <th>Student Name</th>
+                    <th><input type="text"   id="StudentName" name="name"/></th>
+                </tr> 
+                <tr>
+                    <th>Save</th>
+                    <th><input type="submit"value="Submit"/></th>
+                </tr>                  
+            </table>
+        </form>
     </body>
 </html>

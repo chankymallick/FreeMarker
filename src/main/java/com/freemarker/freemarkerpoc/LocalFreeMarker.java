@@ -20,11 +20,11 @@ import java.util.Map;
  *
  * @author Mallick
  */
-public class HelloWorld {
+public class LocalFreeMarker {
     public static void main(String[] args) {
         Configuration cfg = new Configuration();
         try {
-            cfg.setDirectoryForTemplateLoading(new File("E:\\AMM_WEBLOGIC_BUILD\\FreeMarkerPOC\\src\\main\\java\\com\\freemarker\\freemarkerpoc\\"));
+            cfg.setDirectoryForTemplateLoading(new File("E:\\AMM_WEBLOGIC_BUILD\\FreeMarkerPOC\\src\\main\\webapp\\FreeMarkerTemplates\\"));
             Template tmpt= cfg.getTemplate("free.ftl");
             Map <String,Object> data = new HashMap<String,Object>();
             data.put("message", "helloworld");

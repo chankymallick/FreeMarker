@@ -1,0 +1,4 @@
+function dynamic()
+{
+alert('${message}');
+}
