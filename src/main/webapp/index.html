@@ -1,24 +1,59 @@
 <!DOCTYPE html>
 <html>  
     <head>
-        <script type="text/javascript" src="DynamicServletScript"></script>
+        <link rel="stylesheet" href="DynamicServletCSS"/>        
     </head>
-    <body onLoad="dynamic()">
-        <form action="FreemarkerServlet" method="POST">
-            <table align="center">
+    <body>
+      
+        <form action="DynamicFormDesign" method="get">
+            <table id="bgcolor" align="center">
                 <tr>
-                    <th>Student Id</th>
-                    <th> <input type="text" id="StudentId" name="id"/></th>
+                    <th>Background Color</th>
+                    <th>
+                        <select name="bg"  id="AA"  >
+                                <option>Red</option>
+                                <option>Aqua</option>
+                                <option>Yellow</option>
+                                <option>Green</option>
+                                <option>gray</option>
+                                <option>white</option>
+                                <option>blue</option>
+                                <option>black</option>
+                            </select> 
+                    </th>
                 </tr>
                 <tr>
-                    <th>Student Name</th>
-                    <th><input type="text"   id="StudentName" name="name"/></th>
+                    <th>Font Color</th>
+                    <th>
+                           <select name="tc"  id="AA"  >
+                                <option>Red</option>
+                                <option>Aqua</option>
+                                <option>Yellow</option>
+                                <option>Green</option>
+                                <option>gray</option>
+                                  <option>white</option>
+                                <option>blue</option>
+                                <option>black</option>
+                            </select> 
+                       </tr> 
+                 <tr>
+                    <th>Text Font Color</th>
+                    <th><select name="tbbg"  id="AA"  >
+                                <option>Red</option>
+                                <option>Aqua</option>
+                                <option>Yellow</option>
+                                <option>Green</option>
+                                <option>gray</option>
+                                  <option>white</option>
+                                <option>blue</option>
+                                <option>black</option>
+                            </select> </th>
                 </tr> 
                 <tr>
                     <th>Save</th>
                     <th><input type="submit"value="Submit"/></th>
                 </tr>                  
             </table>
-        </form>
+        </form>        
     </body>
 </html>

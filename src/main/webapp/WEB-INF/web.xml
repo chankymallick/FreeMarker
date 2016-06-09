@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+<web-app 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
         <servlet>
 		<servlet-name>freemarker</servlet-name>
 		<servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>
@@ -14,19 +17,19 @@
 		</init-param>
 		<init-param>
 			<param-name>ContentType</param-name>
-			<param-value>application/javascript; charset=UTF-8</param-value>
-			<!-- Forces UTF-8 output encoding! -->
+			<param-value>text/css; charset=UTF-8</param-value>
+                                        <!-- Forces UTF-8 output encoding! -->
 		</init-param>
 		<!-- FreeMarker settings: -->
 		<init-param>
 			<param-name>template_update_delay</param-name>
 			<param-value>0</param-value>
-			<!-- 0 is for development only! Use higher value otherwise. -->
+                                        <!-- 0 is for development only! Use higher value otherwise. -->
 		</init-param>
 		<init-param>
 			<param-name>default_encoding</param-name>
 			<param-value>ISO-8859-1</param-value>
-			<!-- The encoding of the template files. -->
+		<!-- The encoding of the template files. -->
 		</init-param>
 		<init-param>
 			<param-name>number_format</param-name>

@@ -17,11 +17,13 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Mallick
  */
-@WebServlet(name = "DynamicServletScript", urlPatterns = {"/DynamicServletScript"})
-public class DynamicServletScript extends HttpServlet { 
+@WebServlet(name = "DynamicServletCSS", urlPatterns = {"/DynamicServletCSS"})
+public class DynamicServletCSS extends HttpServlet {
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-     
-     req.getRequestDispatcher("FreeMarkerTemplates/DynamicJSTemplate.ftl").forward(req, resp);
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {   
+    req.getRequestDispatcher("FreeMarkerTemplates/DynamicServletCSS.ftl").forward(req, resp);
     }
+
+  
 }
