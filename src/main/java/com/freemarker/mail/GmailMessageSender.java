@@ -15,7 +15,7 @@ public class GmailMessageSender {
         GMail sendmailObj = new GMail();
         String To = "mallickm@analytixds.com";
         String Message = "Hello this is a test message";
-        if (sendmailObj.SendMail(To, Message)) {
+        if (sendmailObj.SendMail(To, Message,null)) {
             System.out.println("Mail Sent Succesfully");
         } else {
             System.out.println("Mail not sent");

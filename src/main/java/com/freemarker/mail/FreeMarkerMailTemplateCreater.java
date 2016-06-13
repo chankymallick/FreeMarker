@@ -22,9 +22,15 @@ import java.util.Map;
  */
 public class FreeMarkerMailTemplateCreater {
     Configuration cfg = new Configuration();
-    public  String createAndReturnTemplateData(String Content) {
+    public  String createAndReturnTemplateData(String Content,String Path) {
             try{
+            if(Path==null){
             cfg.setDirectoryForTemplateLoading(new File("E:\\AMM_WEBLOGIC_BUILD\\FreeMarkerPOC\\src\\main\\webapp\\FreeMarkerTemplates\\"));
+            }
+            else
+            {
+            cfg.setDirectoryForTemplateLoading(new File(Path));
+            }    
             Template tmpt= cfg.getTemplate("EmailTemplateNewMap.ftl");
             
             Map <String,Object> data = new HashMap<String,Object>();

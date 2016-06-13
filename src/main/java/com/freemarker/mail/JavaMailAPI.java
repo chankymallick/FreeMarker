@@ -17,24 +17,14 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Mallick
  */
-@WebServlet(name = "SendMail", urlPatterns = {"/SendMail"})
-public class SendMailServlet extends HttpServlet {
+@WebServlet(name = "JavaMailAPI", urlPatterns = {"/JavaMailAPI"})
+public class JavaMailAPI extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try {
-            String To = req.getParameter("to");
-            String Message = req.getParameter("Message");
-            GMail sendmailObj = new GMail();
-            if (sendmailObj.SendMail(To, Message,req)) {
-                resp.getWriter().write("Mail Sent Succesfully");
-            } else {
-                resp.getWriter().write("Mail not sent");
-            }
-        } catch (Exception e) {
-
-        }
-
+       resp.getWriter().print(req.getServletContext().getRealPath("index.html"));
     }
+
+    
 
 }

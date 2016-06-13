@@ -6,6 +6,8 @@
 package com.freemarker.mail;
 
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.mail.MailSender;
@@ -26,9 +28,9 @@ public class GMail {
 
     }
 
-    public boolean SendMail(String To, String MessageContent) throws Exception {
+    public boolean SendMail(String To, String MessageContent,HttpServletRequest req) throws Exception {
         setMailsender();
-        String FinalMessage = new FreeMarkerMailTemplateCreater().createAndReturnTemplateData(MessageContent);
+        String FinalMessage = new FreeMarkerMailTemplateCreater().createAndReturnTemplateData(MessageContent,getTemplateLocation(req));
         String From = "analytixdstest@gmail.com";
         String Subject = "Freemarker Email Template";
         MimeMessage mimeMessage = mailsender.createMimeMessage();
@@ -42,6 +44,13 @@ public class GMail {
 
         return true;
 
+    }
+    
+    public String getTemplateLocation(HttpServletRequest req) {      
+        return req.getServletContext().getRealPath("index.html").substring(0, req.getServletContext().getRealPath("index.html").indexOf("FreeMarkerPOC")+14)+"src\\main\\webapp\\FreeMarkerTemplates\\";
+    }
+    public String getXMLocation(HttpServletRequest req) {      
+        return req.getServletContext().getRealPath("index.html").substring(0, req.getServletContext().getRealPath("index.html").indexOf("FreeMarkerPOC")+14)+"src\\main\\webapp\\FreeMarkerTemplates\\";
     }
 
 }

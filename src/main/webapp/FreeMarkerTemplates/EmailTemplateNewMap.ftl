@@ -1,38 +1,18 @@
 <html>
-<body>
-<style>
-#header {
-    background-color:black;
-    color:white;
-    text-align:center;
-    padding:5px;
-}
+    <body>
+        <style>
+            </style>
+        <div style="background-color:black;    color:white;    text-align:center;    padding:5px;">
+            <h1>Analytix Data Services</h1>
+            </div>
 
-#section {
-    width:350px;
-    float:left;
-    padding:10px; 
-}
-#footer {
-    background-color:black;
-    color:white;
-    clear:both;
-    text-align:center;
-    padding:5px; 
-}
-</style>
-<div id="header">
-<h1>Analytix Data Services</h1>
-</div>
+        <div style="width:350px;    float:left;    padding:10px; ">
+            <b>${message}</b>
+            </div>
 
+        <div style=" background-color:black;    color:white;    clear:both;    text-align:center;    padding:5px; ">
+            Analytix DS
+            </div>
 
-<div id="section">
-<b>${message}</b>
-</div>
-
-<div id="footer">
-Analytix DS
-</div>
-
-</body>
-</html>
+        </body>
+    </html>
