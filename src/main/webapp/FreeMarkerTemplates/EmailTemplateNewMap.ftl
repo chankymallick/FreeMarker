@@ -2,7 +2,7 @@
     <body>
         <style>
             </style>
-        <div style="background-color:black;    color:white;    text-align:center;    padding:5px;">
+        <div style="background-color:black;  font-size:18px;  color:white;  height:100px;  text-align:center;    padding:5px;">
             <h1>Analytix Data Services</h1>
             </div>
 
