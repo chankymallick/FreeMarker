@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.freemarker.freemarkerpoc;
+package com.freemarker.mail;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.io.Writer;
@@ -21,30 +20,22 @@ import java.util.Map;
  *
  * @author Mallick
  */
-public class LocalFreeMarker {
-    public static void main(String[] args) {
-        Configuration cfg = new Configuration();
-        try {
+public class FreeMarkerMailTemplateCreater {
+    Configuration cfg = new Configuration();
+    public  String createAndReturnTemplateData(String Content) {
+            try{
             cfg.setDirectoryForTemplateLoading(new File("E:\\AMM_WEBLOGIC_BUILD\\FreeMarkerPOC\\src\\main\\webapp\\FreeMarkerTemplates\\"));
-            Template tmpt= cfg.getTemplate("free.ftl");
+            Template tmpt= cfg.getTemplate("EmailTemplateNewMap.ftl");
+            
             Map <String,Object> data = new HashMap<String,Object>();
-            data.put("message", "helloworld");
-            List <String> countries = new ArrayList<String>();
-            countries.add("India");
-            countries.add("Pakistan");
-            countries.add("Bangladesh");
-            countries.add("Sri lanka");
-            data.put("countries",countries);
-            Writer out = new OutputStreamWriter(System.out); 
+            data.put("message",Content );  
+            Writer out = new StringWriter(); 
             tmpt.process(data, out);
             out.flush();
-           Writer file = new FileWriter (new File("D:\\FTL_helloworld.txt"));
-           tmpt.process(data, file);
-           file.flush();
-           file.close();
+            return out.toString();
         } catch (Exception e) {            
             System.out.println(e);
+            return "";
         }
     }
-    
 }
