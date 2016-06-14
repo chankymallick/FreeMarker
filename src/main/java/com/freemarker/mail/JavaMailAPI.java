@@ -22,9 +22,19 @@ public class JavaMailAPI extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       resp.getWriter().print(req.getServletContext().getRealPath("index.html"));
+        GMail mail = new GMail();
+        String To = req.getParameter("to");
+        String Message = req.getParameter("Message");
+        String mid = req.getParameter("mid");
+        String createdby = req.getParameter("createdby");
+        String pname = req.getParameter("pname");
+        String mname = req.getParameter("mname");      
+        
+        if (mail.sendMailUsingJavaMailAPI(To,Message,req,mid,createdby,pname,mname)) {
+            resp.getWriter().print("Mail Sent Succesfully Using Java Mail API");
+        } else {
+            resp.getWriter().print("Mail Not Sent");
+        }
     }
-
-    
 
 }
