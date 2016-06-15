@@ -51,19 +51,23 @@ function addToolBarEvents()
 }
 function gridInitialization(){
     Dhtmlx_Employee_Grid = Dhtmlx_Page_Layout.cells("b").attachGrid();
-    Dhtmlx_Employee_Grid.setHeader("Project Id,Total Mappings,Project Name, Color", ["text-align:left", "text-align:left","text-align:left", "text-align:left"]);
+    Dhtmlx_Employee_Grid.setHeader("RQM Id,Type,Requirement, Description,Priority,Status,Risk,Notes,", ["text-align:left", "text-align:left","text-align:left", "text-align:left,text-align:left", "text-align:left","text-align:left", "text-align:left"]);
     Dhtmlx_Employee_Grid.setInitWidths("100,100,350,200");
-    Dhtmlx_Employee_Grid.setColAlign("left,left,left,left");   
+    Dhtmlx_Employee_Grid.setColAlign("left,left,left,left,left,left,left,left");   
+    Dhtmlx_Employee_Grid.attachHeader("#numeric_filter,#numeric_filter,#text_filter,#select_filter,#text_filter,#text_filter,#text_filter,#text_filter");
     Dhtmlx_Employee_Grid.init();   
    var  data={
     rows:[
-        { id:1, data: ["1","20", "Test Project", "#ee3639"]},
-        { id:2, data: ["2","30", "Demo Project", "#ee9e36"]},
-        { id:3, data: ["3","50", "BCBS Project", "#eeea36"]},
-        { id:4, data: ["4","40", "SQL Project", "#a9ee36"]},
-        { id:5, data: ["5","70", "Hadoop Mappings", "#36d3ee"]},
-        { id:6, data: ["6","80", "MySql Mappings", "#367fee"]},
-        { id:7, data: ["7","60", "JSON Maps", "#9b36ee"]}    
+        { id:1, data: ["RQM1","Functional", "Extract Logic from CBI Database", "Application Home Screen Shoud Be Accesible","High","Approved","High"]},
+        { id:2, data: ["RQM1","Functional", "Extract Logic from CBI Database", "Application Home Screen Shoud Be Accesible","High","Approved","High"]},
+        { id:3, data: ["RQM1","Functional", "Extract Logic from CBI Database", "Application Home Screen Shoud Be Accesible","High","Approved","High"]},
+        { id:4, data: ["RQM1","Functional", "Extract Logic from CBI Database", "Application Home Screen Shoud Be Accesible","High","Approved","High"]},
+        { id:5, data: ["RQM1","Functional", "Extract Logic from CBI Database", "Application Home Screen Shoud Be Accesible","High","Approved","High"]},
+        { id:6, data: ["RQM1","Functional", "Extract Logic from CBI Database", "Application Home Screen Shoud Be Accesible","High","Approved","High"]},
+        { id:7, data: ["RQM1","Functional", "Extract Logic from CBI Database", "Application Home Screen Shoud Be Accesible","High","Approved","High"]},
+        { id:8, data: ["RQM1","Functional", "Extract Logic from CBI Database", "Application Home Screen Shoud Be Accesible","High","Approved","High"]},
+        { id:9, data: ["RQM1","Functional", "Extract Logic from CBI Database", "Application Home Screen Shoud Be Accesible","High","Approved","High"]}
+      
     ]
 };
 Dhtmlx_Employee_Grid.parse(data,"json")
@@ -82,6 +86,6 @@ function windowInitialization(Header){
     Dhtmlx_Employee_Window.window("CommonWindow").denyResize();
 }
 function newChartWindow(pieType){
-    requirementModuleChart(Dhtmlx_Employee_Window.window("CommonWindow"),pieType,Status_Data);
+    requirementModuleChart(Dhtmlx_Employee_Window.window("CommonWindow"),pieType);
     Dhtmlx_Employee_Window.window("CommonWindow").setIconCss("employeeAddList");
 }

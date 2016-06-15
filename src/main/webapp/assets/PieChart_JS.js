@@ -1,7 +1,7 @@
 var normalPieObj;
     var Status_Data = [
 	{ Percentage:"20", Status:"PendingReview", color: "#ee3639" },
-	{ Percentage:"60", Status:"PendingApproval", color: "#ee9e36" },
+	{ Percentage:"60", Status:"PendingApproval", color: "#dbdbdb" },
 	{ Percentage:"10", Status:"Approved", color: "#eeea36" },
 	{ Percentage:"10", Status:"Published", color: "#a9ee36" }	
      ];
