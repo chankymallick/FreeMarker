@@ -25,7 +25,7 @@ function constructPiechartTemplate(CellObject,PieType,StatusType)
                     pieInnerText:"#Percentage#"+"%",
                     tooltip:"#Status#",
                     shadow:5,
-                    legend:{ width: 100, align: "right",padding :"10", valign: "middle", marker:{ type: "round", width: 15  }, template: "#Status#" }
+                    legend:{ width: 100, align: "right",padding :"10", valign: "middle", marker:{ type: "square", width: 15  }, template: "#Status#" }
                  });
                 normalPieObj = CellObject.attachChart(pieConfig);
                 normalPieObj.parse(StatusType,"json");
