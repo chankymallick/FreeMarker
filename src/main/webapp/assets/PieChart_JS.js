@@ -24,7 +24,7 @@ function constructPiechartTemplate(CellObject,PieType,StatusType)
                     color:"#color#",        
                     pieInnerText:"#Percentage#"+"%",
                     tooltip:"#Status#",
-                    shadow:0,
+                    shadow:5,
                     legend:{ width: 100, align: "right",padding :"10", valign: "middle", marker:{ type: "round", width: 15  }, template: "#Status#" }
                  });
                 normalPieObj = CellObject.attachChart(pieConfig);
@@ -48,7 +48,7 @@ function constructPiechartTemplate(CellObject,PieType,StatusType)
            }
            if(id=="risk"){
                constructPiechartTemplate(summaryChartTabber.tabs("risk"),PieType,Risk_Data);
-           }  
+           }            
             return true;
         });
    }

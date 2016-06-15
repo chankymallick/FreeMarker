@@ -20,7 +20,7 @@ function layoutIntialization(){
         pattern: "3J",
         cells:
                 [
-                    {id: "a", text: "Requirement Workshop", height: 400,width:300},
+                    {id: "a", text: "Requirement Workshop", height: 370,width:300},
                     {id: "b", text: "Reqiurement Details"},
                     {id: "c", text: "Summary",width:300}
                 ]
@@ -68,7 +68,8 @@ function gridInitialization(){
 };
 Dhtmlx_Employee_Grid.parse(data,"json")
 requirementModuleChart(Dhtmlx_Page_Layout.cells("c"),"pie")
- 
+ Dhtmlx_Page_Layout.cells("c").showHeader();
+
 }
 function windowInitialization(Header){
     Dhtmlx_Employee_Window = new dhtmlXWindows();
