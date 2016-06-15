@@ -18,6 +18,7 @@ function normalPie(CellObject,PieType)
                     color:"#color#",
                     label:"#ProjectName#",
                     pieInnerText:"#Mappings#",
+                    tooltip:"#ProjectName#",
                     shadow:0        
                  });
                 normalPieObj = CellObject.attachChart(pieConfig);
