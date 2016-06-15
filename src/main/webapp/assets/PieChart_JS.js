@@ -3,7 +3,7 @@ var pie3dObj;
 var donutPieObj;
 function normalPie(CellObject,PieType)
 {    
-    var month_dataset = [
+    var Mapping_Data = [
 	{ Mappings:"20", ProjectName:"Test Project", color: "#ee3639" },
 	{ Mappings:"30", ProjectName:"Demo Project", color: "#ee9e36" },
 	{ Mappings:"50", ProjectName:"BCBS Project", color: "#eeea36" },
@@ -22,7 +22,7 @@ function normalPie(CellObject,PieType)
                     shadow:0        
                  });
                 normalPieObj = CellObject.attachChart(pieConfig);
-                normalPieObj.parse(month_dataset,"json");
+                normalPieObj.parse(Mapping_Data,"json");
    }
 
 
