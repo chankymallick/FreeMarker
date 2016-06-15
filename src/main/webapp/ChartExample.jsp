@@ -1,9 +1,9 @@
 <html>
     <head>
         <title>Analytix Employee Detail</title>
-        <script src="assets/codebase2/dhtmlx.js" type="text/javascript"></script> 
+        <script src="assets/codebase/dhtmlx.js" type="text/javascript"></script> 
         <script src="assets/PieChart_JS.js" type="text/javascript"></script> 
-    	<link rel="STYLESHEET" type="text/css" href="assets/codebase2/dhtmlx.css"> 
+    	<link rel="STYLESHEET" type="text/css" href="assets/codebase/dhtmlx.css"> 
         <script src="assets/controller.js" type="text/javascript"></script>        
     </head>
     <body onload="main_Method()">       

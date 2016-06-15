@@ -1,29 +1,55 @@
 var normalPieObj;
-var pie3dObj;
-var donutPieObj;
-function normalPie(CellObject,PieType)
-{    
-    var Mapping_Data = [
-	{ Mappings:"20", ProjectName:"Test Project", color: "#ee3639" },
-	{ Mappings:"30", ProjectName:"Demo Project", color: "#ee9e36" },
-	{ Mappings:"50", ProjectName:"BCBS Project", color: "#eeea36" },
-	{ Mappings:"40", ProjectName:"SQL Project", color: "#a9ee36" },
-	{ Mappings:"70", ProjectName:"Hadoop Mappings", color: "#36d3ee" },
-	{ Mappings:"80", ProjectName:"MySql Mappings", color: "#367fee" },
-	{ Mappings:"60", ProjectName:"JSON Maps", color: "#9b36ee" }
+    var Status_Data = [
+	{ Percentage:"20", Status:"PendingReview", color: "#ee3639" },
+	{ Percentage:"60", Status:"PendingApproval", color: "#ee9e36" },
+	{ Percentage:"10", Status:"Approved", color: "#eeea36" },
+	{ Percentage:"10", Status:"Published", color: "#a9ee36" }	
      ];
+     var Risk_Data = [
+	{ Percentage:"29", Status:"High", color: "#ee3639" },
+	{ Percentage:"31", Status:"Medium", color: "#ee9e36" },
+	{ Percentage:"40", Status:"Low", color: "#eeea36" }	
+     ];
+     var Priority_Data = [
+	{ Percentage:"45", Status:"High", color: "#ee3639" },
+	{ Percentage:"25", Status:"Medium", color: "#ee9e36" },
+	{ Percentage:"30", Status:"Low", color: "#eeea36" }
+	
+     ];
+function constructPiechartTemplate(CellObject,PieType,StatusType)
+{        
                 var pieConfig =({
                     view:PieType,        
-                    value:"#Mappings#",
-                    color:"#color#",
-                    label:"#ProjectName#",
-                    pieInnerText:"#Mappings#",
-                    tooltip:"#ProjectName#",
-                    shadow:0        
+                    value:"#Percentage#",
+                    color:"#color#",        
+                    pieInnerText:"#Percentage#"+"%",
+                    tooltip:"#Status#",
+                    shadow:0,
+                    legend:{ width: 100, align: "right",padding :"10", valign: "middle", marker:{ type: "round", width: 15  }, template: "#Status#" }
                  });
                 normalPieObj = CellObject.attachChart(pieConfig);
-                normalPieObj.parse(Mapping_Data,"json");
+                normalPieObj.parse(StatusType,"json");
    }
-
-
+   
+   function requirementModuleChart(cellObject,PieType)
+   {
+       var summaryChartTabber = cellObject.attachTabbar();      
+       summaryChartTabber.addTab("status","By Status");
+       summaryChartTabber.addTab("priority","By Priority");
+       summaryChartTabber.addTab("risk","By Risk");
+       constructPiechartTemplate(summaryChartTabber.tabs("status"),PieType,Status_Data);
+       summaryChartTabber.tabs("status").setActive();
+       summaryChartTabber.attachEvent("onSelect", function(id, lastId){
+           if(id=="status"){
+               constructPiechartTemplate(summaryChartTabber.tabs("status"),PieType,Status_Data);
+           }
+           if(id=="priority"){
+               constructPiechartTemplate(summaryChartTabber.tabs("priority"),PieType,Priority_Data);
+           }
+           if(id=="risk"){
+               constructPiechartTemplate(summaryChartTabber.tabs("risk"),PieType,Risk_Data);
+           }  
+            return true;
+        });
+   }
 

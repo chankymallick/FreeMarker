@@ -17,11 +17,12 @@ function main_Method(){
 function layoutIntialization(){
     Dhtmlx_Page_Layout = new dhtmlXLayoutObject({
         parent: "Layout_Container",
-        pattern: "2E",
+        pattern: "3J",
         cells:
                 [
-                    {id: "a", text: "Employee Detail", height: 450},
-                    {id: "b", text: "Logs"}
+                    {id: "a", text: "Requirement Workshop", height: 400,width:300},
+                    {id: "b", text: "Reqiurement Details"},
+                    {id: "c", text: "Summary",width:300}
                 ]
     });
 }
@@ -49,7 +50,7 @@ function addToolBarEvents()
     });
 }
 function gridInitialization(){
-    Dhtmlx_Employee_Grid = Dhtmlx_Page_Layout.cells("a").attachGrid();
+    Dhtmlx_Employee_Grid = Dhtmlx_Page_Layout.cells("b").attachGrid();
     Dhtmlx_Employee_Grid.setHeader("Project Id,Total Mappings,Project Name, Color", ["text-align:left", "text-align:left","text-align:left", "text-align:left"]);
     Dhtmlx_Employee_Grid.setInitWidths("100,100,350,200");
     Dhtmlx_Employee_Grid.setColAlign("left,left,left,left");   
@@ -66,6 +67,7 @@ function gridInitialization(){
     ]
 };
 Dhtmlx_Employee_Grid.parse(data,"json")
+requirementModuleChart(Dhtmlx_Page_Layout.cells("c"),"pie")
  
 }
 function windowInitialization(Header){
@@ -79,6 +81,6 @@ function windowInitialization(Header){
     Dhtmlx_Employee_Window.window("CommonWindow").denyResize();
 }
 function newChartWindow(pieType){
-    normalPie(Dhtmlx_Employee_Window.window("CommonWindow"),pieType);
+    requirementModuleChart(Dhtmlx_Employee_Window.window("CommonWindow"),pieType,Status_Data);
     Dhtmlx_Employee_Window.window("CommonWindow").setIconCss("employeeAddList");
 }
