@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<toolbar>
+   
+   <item id="normalPie" type="button" text="Normal Pie" img="assets/icons/view.png"/>
+    <item id="sep03" type="separator" />  
+   <item id="Pie3d" type="button" text="3d Pie" img="assets/icons/view.png"/>
+    <item id="sep04" type="separator" />  
+   <item id="donutPie" type="button" text="Donut Pie" img="assets/icons/view.png"/>
+</toolbar>
